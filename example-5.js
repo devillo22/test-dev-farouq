@@ -50,5 +50,3 @@ function newObject(companies) {
     average: average.toFixed(2),
   };
 }
-
-console.log(newObject(companies));
