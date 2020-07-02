@@ -35,6 +35,7 @@ console.log('---- EXAMPLE 5 --- ', newObject(companies));
 //     'size' => nombre de "users"
 //     'average' => moyenne d'âge des "users"
 //     'hasCar' => nombre de "users" possédant une voiture
+
 //     'averageWithCar' => moyenne d'âge des "users" possédant une voiture
 
 function newObject(companies) {
