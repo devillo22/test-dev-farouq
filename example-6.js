@@ -29,6 +29,7 @@ console.log('---- EXAMPLE 6 --- ', newObject(companies));
 // de l'âge de chaque "user". Chaque attribut devra avoir la valeur du booléen
 // "car". Voir exemple ci-dessous.
 
+
 const example = {
   johnDoe32: true,
   BernardoMinet45: false,
