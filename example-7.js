@@ -114,7 +114,7 @@ function deleteCompany(id) {
 
 // Partie 3 : Créer une fonction prenant en paramètre un "id" de "company" et
 // permettant de faire un PATCH (comme avec un appel HTTP) sur tous les
-// attributs de cette "company" sauf sur l'attribut "users".
+// attributs de cette "company" saauf sur l'attribut "users".
 
 // Partie 4 : Créer une fonction prenant en paramètre un "id" de "company" et un
 // nouvel "user" dont le nom est "Delgado", le prénom "Juan", ayant 35 ans et
