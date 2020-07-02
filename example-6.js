@@ -16,6 +16,7 @@ console.log('---- EXAMPLE 6 --- ', newObject(companies));
 // -----------------------------------------------------------------------------
 // INSTRUCTIONS IN ENGLISH
 
+
 // Create a function taking the "companies" variable as a parameter and returning
 // a new object whose attributes are the concatenation of the name, first name and
 // the age of each user. Each attribute must have the value of boolean "car".
