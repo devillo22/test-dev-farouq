@@ -2,7 +2,7 @@ import {cleanConsole, createAll} from './data';
 const companies = createAll();
 
 cleanConsole(4, companies);
-console.log('---- EXAMPLE 4 --- ', 'Put here your function');
+console.table('---- EXAMPLE 4 --- ', allUserWithNameOfCompany(companies));
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
@@ -30,3 +30,16 @@ console.log('---- EXAMPLE 4 --- ', 'Put here your function');
 // doit avoir un nouvel attribut "company" ayant pour valeur le nom de la "company"
 // à laquelle il appartient. Les "users" doivent être triés en fonction de leur
 // âge (du plus vieux au plus jeune).
+
+function allUserWithNameOfCompany(companies) {
+  return companies
+      .reduce((acc, company) => {
+        return acc.concat(company.users
+            .map((user) => {
+              user.companie = company.name;
+              return user;
+            }));
+      }
+      , [])
+      .sort((a, b) => a.age > b.age ? -1 :1);
+}

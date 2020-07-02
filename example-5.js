@@ -2,7 +2,7 @@ import {cleanConsole, createAll} from './data';
 const companies = createAll();
 
 cleanConsole(5, companies);
-console.log('---- EXAMPLE 5 --- ', 'Put here your function');
+console.log('---- EXAMPLE 5 --- ', newObject(companies));
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
@@ -36,3 +36,18 @@ console.log('---- EXAMPLE 5 --- ', 'Put here your function');
 //     'average' => moyenne d'âge des "users"
 //     'hasCar' => nombre de "users" possédant une voiture
 //     'averageWithCar' => moyenne d'âge des "users" possédant une voiture
+
+function newObject(companies) {
+  const size = companies.reduce((acc, user) => acc + user.users.length, 0);
+  const ages = companies.map((user) => {
+    return user.users.reduce((acc, person) => acc + person.age, 0);
+  });
+  const totalAges = ages.reduce((acc, user) => acc + user, 0);
+  const average = totalAges / size;
+  return {
+    size: size,
+    average: average.toFixed(2),
+  };
+}
+
+console.log(newObject(companies));

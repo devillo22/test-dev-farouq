@@ -1,9 +1,10 @@
 import {cleanConsole, createAll} from './data';
+import {capiAndReplace} from './example-1';
 
 const companies = createAll();
 
 cleanConsole(3, companies);
-console.log('---- EXAMPLE 3 --- ', 'Put here your function');
+console.log('---- EXAMPLE 3 --- ', tcheckFunction(companies));
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
@@ -29,3 +30,16 @@ console.log('---- EXAMPLE 3 --- ', 'Put here your function');
 // un booléen validant que tous les noms des "company" et les attributs "firstName"
 // et "lastName" des "users" sont en majuscules. Vous devez tester le fonctionnement
 // de cette fonction en important la fonction créée pour "example-1.js".
+
+function tcheckFunction(companies) {
+  return companies
+      .every((company) => {
+        company.name = capiAndReplace(company.name);
+        company.users.every((user) => {
+          user.firstName = capiAndReplace(user.firstName);
+          user.lastName = capiAndReplace(user.lastName);
+        });
+        return company;
+      });
+}
+

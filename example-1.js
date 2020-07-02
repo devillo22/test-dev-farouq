@@ -2,7 +2,7 @@ import {createAll, cleanConsole} from './data';
 const companies = createAll();
 
 cleanConsole(1, companies);
-console.log('---- EXAMPLE 1 --- ', 'Put here your function');
+console.log('---- EXAMPLE 1 --- ', replaceAndOrderByName(companies));
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
@@ -33,3 +33,26 @@ console.log('---- EXAMPLE 1 --- ', 'Put here your function');
 // le nom et le prénom de chaque "user".
 // Les "companies" doivent être triées par leur nombre de "user" (ordre décroissant)
 // et les "users" de chaque "company" doivent être classés par ordre alphabétique.
+
+export function capiAndReplace(name) {
+  return name && typeof name === 'string'
+      ? name.charAt(0).toUpperCase() + name.slice(1)
+      : '';
+}
+
+
+function replaceAndOrderByName(companies) {
+  return companies
+      .map((company) => {
+        company.name = capiAndReplace(company.name);
+        company.users = company.users
+            .map((user) => {
+              user.lastName = capiAndReplace(user.lastName);
+              user.firstName = capiAndReplace(user.firstName);
+              return user;
+            })
+            .sort((a, b) => b.lastName < a.lastName ? 1 : -1);
+        return company;
+      })
+      .sort((a, b) => b.usersLength - a.usersLength);
+}

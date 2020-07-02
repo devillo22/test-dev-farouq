@@ -2,7 +2,7 @@ import {cleanConsole, createAll} from './data';
 const companies = createAll();
 
 cleanConsole(2, companies);
-console.log('---- EXAMPLE 2 --- ', 'Put here your function');
+console.log('---- EXAMPLE 2 --- ', keepOnlyCars(companies, false));
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
@@ -30,3 +30,11 @@ console.log('---- EXAMPLE 2 --- ', 'Put here your function');
 // "users" dont la valeur de l'attribut "car" est égal au paramètre de la
 // fonction "hasCar" et l'attribut "usersLength" doit renseigner le nombre de
 // "users" correspondant au paramètre "hasCar".
+
+function keepOnlyCars(companies, hasCar) {
+  return companies.map((company) => {
+    company.users = company.users.filter((user) => user.car === hasCar);
+    company.usersLength = company.users.length;
+    return company;
+  });
+}

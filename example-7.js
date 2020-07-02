@@ -3,8 +3,8 @@ import {cleanConsole, createAll} from './data';
 const companies = createAll();
 
 cleanConsole(7, companies);
-console.log('---- EXAMPLE 7 part 1 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 2 --- ', 'Put here your function');
+console.log('---- EXAMPLE 7 part 1 --- ', getCompany(8));
+console.log('---- EXAMPLE 7 part 2 --- ', deleteCompany(2));
 console.log('---- EXAMPLE 7 part 3 --- ', 'Put here your function');
 console.log('---- EXAMPLE 7 part 4 --- ', 'Put here your function');
 console.log('---- EXAMPLE 7 part 5 --- ', 'Put here your function');
@@ -98,9 +98,19 @@ console.log('---- EXAMPLE 7 part 9 --- ', 'Put here your function');
 
 // Partie 1 : Créer une fonction prenant en paramètre un "id" de "company" et
 // retournant le nom de cette "company".
+function getCompany(id) {
+  const companyFind = companies.find((company) => company.id = id);
+  return companyFind.name;
+}
 
 // Partie 2 : Créer une fonction prenant en paramètre un "id" de "company" et
 // supprimant la "company" de la liste.
+
+function deleteCompany(id) {
+  const companyToFind = companies.find((company) => company.id === id);
+  return companies.filter((company) => company !== companyToFind);
+}
+
 
 // Partie 3 : Créer une fonction prenant en paramètre un "id" de "company" et
 // permettant de faire un PATCH (comme avec un appel HTTP) sur tous les
